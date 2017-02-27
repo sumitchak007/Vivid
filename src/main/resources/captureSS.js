@@ -4,6 +4,18 @@ var page = require('webpage').create(),
     output,
     browser,
     size;
+var requestsArray = [];
+
+page.onResourceRequested = function(requestData, networkRequest) {
+  requestsArray.push(requestData.id);
+};
+
+page.onResourceReceived = function(response) {
+  var index = requestsArray.indexOf(response.id);
+  requestsArray.splice(index, 1);
+};
+
+
 if (system.args.length < 4 || system.args.length > 5) {
 	console.log("Please provide all the required parameter.....")
     phantom.exit(1);
@@ -34,14 +46,29 @@ if (system.args.length < 4 || system.args.length > 5) {
     console.log("User agent:"+page.settings.userAgent)
     console.log("********************************************************")
     page.open(address, function (status) {
-        if (status !== 'success') {
-            console.log('Unable to load the address:'+address);
-            phantom.exit();
-        } else {
-            window.setTimeout(function () {
-                page.render(output);
-                phantom.exit();
-            }, 15000);
-        }
+    	window.setTimeout(function () {
+             page.render(output);
+             phantom.exit();
+         }, 2000);
+//        if (status !== 'success') {
+//            console.log('Unable to load the address:'+address);
+//            console.log('status:'+status);
+//            //phantom.exit();
+//        }
     });
+    
+//    page.open(address, function(status) {
+//
+//    	  var interval = setInterval(function () {
+//
+//    	    if (requestsArray.length === 0) {
+//
+//    	      clearInterval(interval);
+////    	      var content = page.content;
+////    	      console.log(content);
+//    	      page.render(output);
+//    	      phantom.exit();
+//    	    }
+//    	  }, 500);
+//    	});
 }

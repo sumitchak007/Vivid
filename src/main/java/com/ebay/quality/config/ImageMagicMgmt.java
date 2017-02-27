@@ -64,31 +64,31 @@ public class ImageMagicMgmt {
 		String convertFilePath = "convert"+PageDiffUtil.getFileExt();// Copy the convert binary file to
 		// the root of the project directory
 		File convertFile = new File(convertFilePath);
-		try {
-			if (!convertFile.exists()) {
-				out = new FileOutputStream(convertFilePath);
-				IOUtils.copy(is, out);
-				out.close();
-				is.close();
-				String errorsWarn=null;
-				Process process = Runtime.getRuntime().exec("chmod +x " + convertFilePath);
-				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
-				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-					while ((errorsWarn = stdWarn.readLine()) != null) {
-						LOGGER.warn(errorsWarn);
-					}
-					while ((errorsWarn = stdError.readLine()) != null) {
-						LOGGER.warn(errorsWarn);
-					}
-					process.destroy();
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+//		try {
+//			if (!convertFile.exists()) {
+//				out = new FileOutputStream(convertFilePath);
+//				IOUtils.copy(is, out);
+//				out.close();
+//				is.close();
+//				String errorsWarn=null;
+//				Process process = Runtime.getRuntime().exec("chmod +x " + convertFilePath);
+//				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+//					while ((errorsWarn = stdWarn.readLine()) != null) {
+//						LOGGER.warn(errorsWarn);
+//					}
+//					while ((errorsWarn = stdError.readLine()) != null) {
+//						LOGGER.warn(errorsWarn);
+//					}
+//					process.destroy();
+//			}
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		
 		return convertFilePath;
 	}
@@ -100,32 +100,32 @@ public class ImageMagicMgmt {
 		OutputStream out;
 		String compareFilePath = "compare"+PageDiffUtil.getFileExt();// Copy the compare binary file to
 		// the root of the project directory
-		File compareFile = new File(compareFilePath);
-		try {
-			if (!compareFile.exists()) {
-				out = new FileOutputStream(compareFilePath);
-				IOUtils.copy(is, out);
-				out.close();
-				is.close();
-				String errorsWarn=null;
-				Process process = Runtime.getRuntime().exec("chmod +x " + compareFilePath);
-				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
-				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-					while ((errorsWarn = stdWarn.readLine()) != null) {
-						LOGGER.warn( errorsWarn);
-					}
-					while ((errorsWarn = stdError.readLine()) != null) {
-						LOGGER.warn(errorsWarn);
-					}
-					process.destroy();
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+//		File compareFile = new File(compareFilePath);
+//		try {
+//			if (!compareFile.exists()) {
+//				out = new FileOutputStream(compareFilePath);
+//				IOUtils.copy(is, out);
+//				out.close();
+//				is.close();
+//				String errorsWarn=null;
+//				Process process = Runtime.getRuntime().exec("chmod +x " + compareFilePath);
+//				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+//					while ((errorsWarn = stdWarn.readLine()) != null) {
+//						LOGGER.warn( errorsWarn);
+//					}
+//					while ((errorsWarn = stdError.readLine()) != null) {
+//						LOGGER.warn(errorsWarn);
+//					}
+//					process.destroy();
+//			}
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		return compareFilePath;
 	}
 
@@ -136,33 +136,33 @@ public class ImageMagicMgmt {
 		OutputStream out;
 		String montageFilePath = "montage"+PageDiffUtil.getFileExt();// Copy the montage binary file to
 		// the root of the project directory
-		File compareFile = new File(montageFilePath);
-		try {
-			if (!compareFile.exists()) {
-				out = new FileOutputStream(montageFilePath);
-				IOUtils.copy(is, out);
-				out.close();
-				is.close();
-				String errorsWarn=null;
-				Process process = Runtime.getRuntime().exec("chmod +x " + montageFilePath);
-				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
-				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-					while ((errorsWarn = stdWarn.readLine()) != null) {
-						LOGGER.warn(errorsWarn);
-					}
-					while ((errorsWarn = stdError.readLine()) != null) {
-						LOGGER.warn(errorsWarn);
-					}
-					process.destroy();
-				
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+//		File compareFile = new File(montageFilePath);
+//		try {
+//			if (!compareFile.exists()) {
+//				out = new FileOutputStream(montageFilePath);
+//				IOUtils.copy(is, out);
+//				out.close();
+//				is.close();
+//				String errorsWarn=null;
+//				Process process = Runtime.getRuntime().exec("chmod +x " + montageFilePath);
+//				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+//					while ((errorsWarn = stdWarn.readLine()) != null) {
+//						LOGGER.warn(errorsWarn);
+//					}
+//					while ((errorsWarn = stdError.readLine()) != null) {
+//						LOGGER.warn(errorsWarn);
+//					}
+//					process.destroy();
+//				
+//			}
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		return montageFilePath;
 	}
 
@@ -173,32 +173,32 @@ public class ImageMagicMgmt {
 		OutputStream out;
 		String mogrifyFilePath = "mogrify"+PageDiffUtil.getFileExt();// Copy the mogrify binary file to
 		// the root of the project directory
-		File mogrifyFile = new File(mogrifyFilePath);
-		try {
-			if (!mogrifyFile.exists()) {
-				out = new FileOutputStream(mogrifyFilePath);
-				IOUtils.copy(is, out);
-				out.close();
-				is.close();
-				String errorsWarn=null;
-				Process process = Runtime.getRuntime().exec("chmod +x " + mogrifyFilePath);
-				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
-				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-					while ((errorsWarn = stdWarn.readLine()) != null) {
-						LOGGER.warn(errorsWarn);
-					}
-					while ((errorsWarn = stdError.readLine()) != null) {
-						LOGGER.warn( errorsWarn);
-					}
-					process.destroy();
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+//		File mogrifyFile = new File(mogrifyFilePath);
+//		try {
+//			if (!mogrifyFile.exists()) {
+//				out = new FileOutputStream(mogrifyFilePath);
+//				IOUtils.copy(is, out);
+//				out.close();
+//				is.close();
+//				String errorsWarn=null;
+//				Process process = Runtime.getRuntime().exec("chmod +x " + mogrifyFilePath);
+//				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+//					while ((errorsWarn = stdWarn.readLine()) != null) {
+//						LOGGER.warn(errorsWarn);
+//					}
+//					while ((errorsWarn = stdError.readLine()) != null) {
+//						LOGGER.warn( errorsWarn);
+//					}
+//					process.destroy();
+//			}
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		return mogrifyFilePath;
 	}
 	

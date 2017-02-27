@@ -27,7 +27,7 @@ public class PageDiffUtil {
 	public static final String IMAGE_MAGIC_BIN_PATH_WIN = "/imagemagicbinary/ImageMagick-6_8_9_7_Win";
 	public static final String IMAGE_FILE_EXT_JPG = ".jpg";
 	public static final String IMAGE_FILE_EXT_PNG = ".png";
-	public static final String MAC_UNX_SOL_SCRIPT_PRFX = "./";
+	public static final String MAC_UNX_SOL_SCRIPT_PRFX = "";
 	public static final String IMAGE_FUZZINESS = "-fuzz 5%";
 	public static final String DIFF_IMAGE_SUFX = "d";
 	public static final String TARGT_IMAGE_SUFX = "t";

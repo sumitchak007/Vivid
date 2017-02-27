@@ -84,16 +84,16 @@ public class Vivid {
 		 * Keep them uncommented if you want to build 
 		 * as a executable Swing application
 		 */
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Vivid window = new Vivid();
-					window.frmVividaVisualTesting.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+//		SwingUtilities.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Vivid window = new Vivid();
+//					window.frmVividaVisualTesting.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
 		//END comments
 		
 		/*

@@ -27,32 +27,32 @@ public class PhantomJSMgmt {
 														// binary file to the
 														// root of the project
 														// directory
-		File phantomJS = new File(phantomJSBinaryFilePath);
-		try {
-			if (!phantomJS.exists()) {
-				out = new FileOutputStream(phantomJSBinaryFilePath);
-				IOUtils.copy(is, out);
-				out.close();
-				is.close();
-				String errorsWarn=null;
-				Process process = Runtime.getRuntime().exec("chmod +x " + phantomJSBinaryFilePath);
-				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
-				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-					while ((errorsWarn = stdWarn.readLine()) != null) {
-						LOGGER.warn( errorsWarn);
-					}
-					while ((errorsWarn = stdError.readLine()) != null) {
-						LOGGER.warn(errorsWarn);
-					}
-					process.destroy();
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+//		File phantomJS = new File(phantomJSBinaryFilePath);
+//		try {
+//			if (!phantomJS.exists()) {
+//				out = new FileOutputStream(phantomJSBinaryFilePath);
+//				IOUtils.copy(is, out);
+//				out.close();
+//				is.close();
+//				String errorsWarn=null;
+//				Process process = Runtime.getRuntime().exec("chmod +x " + phantomJSBinaryFilePath);
+//				BufferedReader stdWarn = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//				BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+//					while ((errorsWarn = stdWarn.readLine()) != null) {
+//						LOGGER.warn( errorsWarn);
+//					}
+//					while ((errorsWarn = stdError.readLine()) != null) {
+//						LOGGER.warn(errorsWarn);
+//					}
+//					process.destroy();
+//			}
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
 		return phantomJSBinaryFilePath;
 	}
 

@@ -71,7 +71,7 @@ public class Executor {
 			}
 		}
 		}
-		//System.exit(0);
+		System.exit(0);
 	}
 	
 public List<FutureTask<String>> execute (List<Callable<String>> workerQ){

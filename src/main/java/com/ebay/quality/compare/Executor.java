@@ -38,6 +38,7 @@ public class Executor {
 	
 	private static ExecutorService executor = null;
 	private final static Logger LOGGER = Logger.getLogger(Executor.class);
+	
 	public static void startVivid(String[] args){
 		PageDiffUtil.printProjectName();
 		for(String arg:args){

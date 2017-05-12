@@ -26,6 +26,7 @@ public class ExecutionServiceImpl {
 	    	if(threadCount>0)
 	    		NUMBER_OF_THREADS=threadCount;
 	    	LOGGER.info("Number of application threads:"+NUMBER_OF_THREADS);
+	    	if(executor==null)
 	    		executor=Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 	    	return executionSrvcImpl;
 	    }

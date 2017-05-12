@@ -45,30 +45,15 @@ if (system.args.length < 4 || system.args.length > 5) {
     console.log("Browser:"+browser)
     console.log("User agent:"+page.settings.userAgent)
     console.log("********************************************************")
-    page.open(address, function (status) {
-    	window.setTimeout(function () {
-             page.render(output);
-             phantom.exit();
-         }, 2000);
-//        if (status !== 'success') {
-//            console.log('Unable to load the address:'+address);
-//            console.log('status:'+status);
-//            //phantom.exit();
-//        }
+   page.open(address, function (status) {
+        if (status !== 'success') {
+            console.log('Unable to load the address:'+address);
+            phantom.exit();
+        } else {
+            window.setTimeout(function () {
+                page.render(output);
+                phantom.exit();
+            }, 10000);
+        }
     });
-    
-//    page.open(address, function(status) {
-//
-//    	  var interval = setInterval(function () {
-//
-//    	    if (requestsArray.length === 0) {
-//
-//    	      clearInterval(interval);
-////    	      var content = page.content;
-////    	      console.log(content);
-//    	      page.render(output);
-//    	      phantom.exit();
-//    	    }
-//    	  }, 500);
-//    	});
 }

@@ -23,7 +23,7 @@ public class PhantomJSMgmt {
 		InputStream is = PhantomJSMgmt.class
 				.getResourceAsStream(phantomJSBinPath);
 		OutputStream out;
-		String phantomJSBinaryFilePath = "phantomjs" + PageDiffUtil.getFileExt() +" --ignore-ssl-errors=yes --ssl-protocol=any";// Copy the phantomjs
+		String phantomJSBinaryFilePath = "phantomjs" + PageDiffUtil.getFileExt() +" --ignore-ssl-errors=yes --ssl-protocol=any --disk-cache=true";// Copy the phantomjs
 														// binary file to the
 														// root of the project
 														// directory

@@ -32,7 +32,7 @@ public class PhantomJSWorker implements Callable<String> {
 		String[] splitCmdArr = takeScreenShotCmd.split(" ");
 		Process process=null;
 		try {
-			process = Runtime.getRuntime().exec(takeScreenShotCmd);
+			process = Runtime.getRuntime().exec("chmod +x " + takeScreenShotCmd);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
